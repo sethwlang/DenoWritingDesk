@@ -1,0 +1,44 @@
+@use "colors";
+
+.full-view {
+    height:100vh;
+    width:100vw;
+}
+
+.flex {
+    display:flex;
+}
+
+.vertical {
+    flex-direction:column;
+}
+
+.center {
+    justify-content:center;
+}
+
+.flex.center {
+    > img {
+        align-self:center;
+    }
+}
+.fade-out {
+    opacity:0;
+}
+
+
+.block {
+    display:block;
+}
+
+.hidden {
+    display:none;
+}
+
+.bg-primary {
+    background:colors.$primary;
+}
+
+.bg-primary-light {
+    background:colors.$primary-light;
+}

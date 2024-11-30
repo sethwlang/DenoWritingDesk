@@ -1,0 +1,13 @@
+.write {
+    .columns {
+        > div.image {
+            img {
+                left:42%;
+                @media (max-width:1200px) {
+                    left:50%;
+                }
+            }
+        }
+    } 
+
+}

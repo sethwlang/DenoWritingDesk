@@ -1,0 +1,100 @@
+.header {
+  min-height:calc(100vh - 136px);
+  @media (max-width:991px) {
+    height:auto;
+    min-height:0;
+  }
+}
+
+
+#twd {
+  padding:60px;
+  @media (max-width:1368px) {
+    padding:64px;
+  }
+  @media (max-width:991px) {
+    padding:40px 24px;
+  }
+  @media (max-width:768px) {
+    padding:24px 16px;
+  }
+}
+
+nav {
+  + * {
+    //padding-top:calc(136px * 2);
+    padding-top:136px;
+
+    @media (max-width:991px) {
+      padding-top:72px;
+     
+    }
+  }
+
+  + .home {
+    padding-bottom:20px;
+  }
+}
+
+.columns {
+  @media (max-width:991px) {
+      flex-wrap:wrap;
+  }
+  > div {
+      width:50%;
+      @media (max-width:991px) {
+          width:100%;
+      }
+
+      &.content {
+        padding:4vw;
+        @media (max-width:480px) {
+          padding:16px;
+          padding-bottom:4vw;
+        }
+      }
+      &.image {
+          overflow:hidden;
+          @media (max-width:991px) {
+            padding-bottom:58vw;
+            height:58vw;
+          }
+          img {
+              position:absolute;
+              top:50%;
+              left:50%;
+              transform:translateX(-50%) translateY(-50%);
+              min-width:100%;
+              min-height:100%;
+              max-width:200%;
+              max-height:150%;
+              width:auto;
+          }
+      }
+  }
+}
+
+.quote {
+  position:relative;
+  @media (max-width:768px) {
+    padding-top:48px!important;
+  }
+  &:before {
+    position:absolute;
+    content:'';
+    height:100px;
+    width:100px;
+    left:-42px;
+    top:50%;
+    transform:translateY(-50%) scale(0.8);
+    background-image:url('../assets/images/quote-primary.png');
+    background-position:center center;
+    background-size:cover;
+    pointer-events:none;
+    @media (max-width:768px) {
+      left:50%;
+      top:-38px;
+      transform:translateX(-50%) scale(0.68);
+    }
+  }
+}

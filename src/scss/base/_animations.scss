@@ -1,0 +1,130 @@
+@keyframes revealChar {
+    0% {
+        transform:translateY(102%) translateZ(0) translate3d(0,0,0);
+    }
+    100% {
+        transform:translateY(0) translateZ(0) translate3d(0,0,0);
+    }
+}
+
+@keyframes rotateWrapper {
+    0% {
+        transform:rotateY(110deg);
+        filter:blur(20px);
+    }
+    100% {
+        transform:rotateY(0deg);
+        filter:blur(0);
+    }
+}
+@keyframes blurIn {
+    0% {
+        filter:blur(20px);
+    }
+    50% {
+        filter:blur(14px);
+    }
+    100% {
+        filter:blur(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform:scale(0.8) translateZ(0) translate3d(0,0,0);
+    }
+    100% {
+        transform:scale(1) translateZ(0) translate3d(0,0,0);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform:scale(1) translateZ(0) translate3d(0,0,0);
+    }
+    100% {
+        transform:scale(0.8) translateZ(0) translate3d(0,0,0);
+    }
+}
+
+@keyframes zFadeIn {
+
+    0% {
+        transform:translateZ(-200px) perspective(1000px);
+        opacity:0;
+    }
+
+    100% {
+        transform:translateZ(0) perspective(1000px);
+        opacity:1;
+    }
+
+}
+
+@keyframes clipSwipe {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.clip-swipe {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.fade-reveal {
+    opacity:0;
+    transition: all 0.8s, height 0s, width 0s;
+    transition-timing-function:cubic-bezier(.785, 0.135, 0.15, 0.86);
+    &.active {
+        opacity:1;
+        transition-delay:0.4s;
+    }
+    &.primary-button {
+        @for $i from 1 through 32 {
+            &:nth-child(#{$i}) {
+                animation-delay:calc(0.24s * $i)!important;
+                transition-delay:calc(0.24s * $i)!important;
+            }
+        }
+    }
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.fade-in {
+    animation: fadeIn 1s;
+    animation-fill-mode:forwards;
+    animation-timing-function:cubic-bezier(.785, 0.135, 0.15, 0.86);
+}
+
+
+@keyframes rotateCounterClockwise {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(-359.999deg);
+    }
+}
+
+@keyframes fill {
+  0% {
+    stroke-dashoffset:650;
+  }
+  100% {
+    stroke-dashoffset:0;
+  }
+}
