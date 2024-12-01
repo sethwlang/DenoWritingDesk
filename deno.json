@@ -18,6 +18,6 @@
     "vite": "npm:vite@6.0.1",
     "vue": "npm:vue@3.5.13",
     "vue-router": "npm:vue-router@4.5.0",
-    "vue-slick-carousel": "npm:vue-slick-carousel@1.0.6"
+    "vue3-carousel": "npm:vue3-carousel@^0.8.1"
   }
 }

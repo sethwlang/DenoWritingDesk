@@ -45,11 +45,11 @@
         <p>Whether you’re launching a new website or trying to finish a book, getting words (much less the right words) onto the page can be a challenge. </p>
         <p>Finding the right support doesn’t have to be. Here’s what it’s like to work with me!</p>
       </div>
-      <VueSlickCarousel v-bind="settings" class="carousel">
-        <div v-for="slide in slides" :key="slide.quote">
+      <carousel v-bind="settings" class="carousel">
+        <slide v-for="slide in slides" :key="slide.quote">
           <p class="quote white-bg" v-html="slide.quote"></p>
-        </div>
-      </VueSlickCarousel>
+        </slide>
+      </carousel>
     
       
     </section>
@@ -69,9 +69,8 @@
 
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import 'vue3-carousel/dist/carousel.css';
+import {Carousel, Slide,Pagination,Navigation} from 'vue3-carousel';
 import KitForm from "../components/KitForm.vue";
 export default {
   data() {
@@ -101,24 +100,20 @@ export default {
         }
       ],
        settings: {
-          arrows: false,
-          autoplay: true,
-          speed: 2000,
-          autoplaySpeed: 5000,
-          slidesToShow: 2,
-          responsive: [
-          {
-            "breakpoint": 1024,
-            "settings": {
-            "slidesToShow": 1,
-        
-        }
-    }],
+         itemsToShow:2,
+         wrapAround: true,
+         autoplay:3000,
+         transition:1000,
+         pauseAutoplayOnHover: true,
+
 
         },
     }
   },
-  components: { KitForm,/*VueSlickCarousel*/ },
+  components: { KitForm,Carousel,
+    Slide,
+    Pagination,
+    Navigation, },
   methods: {
     next() {
       const first = this.slides.shift()
@@ -135,6 +130,21 @@ export default {
       }
       return false;
     }
+  },
+  mounted(){
+    if(window.innerWidth < 1200){
+      this.settings.itemsToShow=1.5;
+    }
+    if(window.innerWidth < 1024){
+      this.settings.itemsToShow=1.4;
+    }
+    if(window.innerWidth < 900){
+      this.settings.itemsToShow=1.3;
+    }
+    if(window.innerWidth < 768){
+      this.settings.itemsToShow=1;
+    }
+
   }
 }
 </script>
