@@ -1,5 +1,5 @@
 import {createApp} from 'vue'
-import {createWebHistory, createRouter} from 'vue-router'
+import {createWebHashHistory, createRouter} from 'vue-router'
 import Home from '../views/Home.vue'
 
 
@@ -51,7 +51,7 @@ const routes = [
 
 const router = new createRouter({
   routes,
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   scrollBehavior () {
     return { x: 0, y: 0 }
   }
