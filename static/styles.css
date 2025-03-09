@@ -134,5 +134,5 @@ html {
   float: right;        /* or "right" if you prefer on the right side */
   margin: 0 1rem 1rem 0;
   /* Adjust margin as you like, for spacing around the image */
-  max-width: 300px;   /* optional: to control the image size */
+  max-width: 60%;   /* optional: to control the image size */
 }
