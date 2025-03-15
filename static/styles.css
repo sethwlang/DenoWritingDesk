@@ -1,138 +1,316 @@
+/* Example professional-looking CSS for Deno Fresh site */
 
+/* Optional: import a nice web font to make text feel polished */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
+
+/* Root variables: tweak these to match your brand’s look */
+:root {
+  --font-main: 'Inter', sans-serif;
+  --color-text: #333;
+  --color-primary: #535353; /* pulled from your SVG fill color */
+  --color-accent: #86efac;  /* background used in 404 page, to tie it all in */
+  --color-bg: #ffffff;
+  --spacing-unit: 1rem;
+}
+
+/* Basic resets */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-* {
+
+html,
+body {
   margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
 }
-button {
-  color: inherit;
+
+/*
+  Because your Layout wraps everything in a <main class="layout">,
+  we can use flex to push the footer down (minimum full-page height).
+*/
+main.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-button, [role="button"] {
-  cursor: pointer;
+
+/* Basic nav styling */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-unit);
+  border-bottom: 1px solid #ddd;
+  background-color: var(--color-bg);
 }
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  font-size: 1em;
+nav > div {
+  display: inline-block;
 }
-img,
-svg {
-  display: block;
+nav a {
+  margin: 0 var(--spacing-unit);
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
 }
-img,
-video {
-  max-width: 100%;
+
+/* Main content spacing */
+main.layout > *:not(nav):not(footer) {
+  max-width: 1200px;
+  margin: var(--spacing-unit) auto;
+  padding: 0 var(--spacing-unit);
+}
+
+/* Floating image styling */
+.float-image-home {
+  float: right;
+  margin: 0 1rem 1rem 0;
+  max-width: 300px;
   height: auto;
 }
 
-html {
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-.transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.my-6 {
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-.my-4 {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.py-8 {
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-}
-.bg-\[\#86efac\] {
-  background-color: #86efac;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.py-6 {
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
-}
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.py-1 {
-  padding-bottom: 0.25rem;
-  padding-top: 0.25rem;
-}
-.border-gray-500 {
-  border-color: #6b7280;
-}
-.bg-white {
-  background-color: #fff;
-}
-.flex {
-  display: flex;
-}
-.gap-8 {
-  grid-gap: 2rem;
-  gap: 2rem;
-}
-.font-bold {
-  font-weight: 700;
-}
-.max-w-screen-md {
-  max-width: 768px;
-}
-.flex-col {
-  flex-direction: column;
-}
-.items-center {
-  align-items: center;
-}
-.justify-center {
-  justify-content: center;
-}
-.border-2 {
-  border-width: 2px;
-}
-.rounded {
-  border-radius: 0.25rem;
-}
-.hover\:bg-gray-200:hover {
-  background-color: #e5e7eb;
-}
-.tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-/*#######################*/
-      /*CUSTOM CSS*/
-/*#######################*/
-.float-image {
-  float: right;        /* or "right" if you prefer on the right side */
+.float-image-about {
+  float: left;
   margin: 0 1rem 1rem 0;
-  /* Adjust margin as you like, for spacing around the image */
-  max-width: 60%;   /* optional: to control the image size */
+  max-width: 300px;
+  height: auto;
 }
+.image-coaching {
+  display: block;
+  max-width: 400px;
+  height: auto;
+  margin: 1.5rem auto;   /* center the image horizontally */
+  border-radius: 6px;    /* slight rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* Headings */
+h1, h2, h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Lists spacing */
+ul {
+  margin-bottom: 1rem;
+  padding-left: 1.4rem;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer sits at the bottom thanks to flex in main.layout */
+footer {
+  margin-top: auto; /* push footer to bottom */
+  border-top: 1px solid #ddd;
+  background-color: var(--color-bg);
+  text-align: center;
+  padding: var(--spacing-unit);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* A flex container to position description (left) and details (right) side by side */
+.pricing-offer {
+  display: flex;                /* Put children side by side */
+  align-items: flex-start;      /* Top-align them */
+  justify-content: space-between;
+  gap: 2rem;                    /* Space between left & right columns */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: #fdfdfd;    /* Slightly off-white background */
+}
+
+/* Left column */
+.pricing-description {
+  flex: 1;                      /* Let the description grow/shrink as needed */
+}
+
+.pricing-description h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Right column */
+.pricing-details {
+  display: flex;
+  flex-direction: column;       /* Stack the price above the button */
+  align-items: center;        /* center-align text in the details area */
+  justify-content: center;      /* Center them vertically in the column */
+  min-width: 150px;            /* Keep some consistent width */
+  width: 30%;
+}
+
+/* Price styling */
+.pricing-details .price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Sign Up button */
+.sign-up-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #535353;   /* Adjust to your brand color */
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.sign-up-btn:hover {
+  background-color: #333;      /* Darken on hover */
+}
+
+/* Tweak heading, paragraph, list styles if desired */
+.pricing-description p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.pricing-description ul {
+  margin-left: 1.2rem;
+  list-style: disc;
+}
+/* Container: turn on flex, wrap items, and set some gap. */
+.faq-container {
+  display: flex;
+  flex-wrap: wrap;       /* Allows items to wrap into multiple rows. */
+  gap: 1rem;            /* Spacing between items */
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+/* Force each item to be ~50% wide, minus the gap.
+   (calc(50% - 0.5rem) accounts for the 1rem gap, half on each side.)
+*/
+.faq-item {
+  flex: 1 1 calc(50% - 0.5rem);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* If you want EXACT two columns, you can do:
+   .faq-item {
+     flex: 0 0 calc(50% - 0.5rem);
+   }
+   This ensures each is exactly 50% (no auto sizing).
+*/
+
+/* Make sure items go full width on small screens */
+@media (max-width: 600px) {
+  .faq-item {
+    flex: 1 1 100%;
+  }
+}
+
+/* The clickable question row */
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Arrow style & transitions */
+.faq-arrow {
+  transition: transform 0.3s;
+}
+
+/* Answer hidden initially */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+/* Show answer when open */
+.faq-answer.open {
+  max-height: 200px; /* or large enough for your content */
+  opacity: 1;
+}
+/* Outer wrapper: horizontally center everything, set spacing */
+.carousel-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px; /* adjust to your liking */
+  margin: 2rem auto;
+}
+
+/* "Viewport" that hides overflow beyond the visible 3 images */
+.carousel-window {
+  width: 600px; /* total width that will display the 3 images (200px each if you want) */
+  overflow: hidden;
+  position: relative;
+}
+
+/* The track is a flex row for all slides, transitions for smooth sliding */
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease; /* controls slide speed & easing */
+}
+
+/* Each item is 1/3 of the .carousel-window’s width => 3 items fill 100% */
+.carousel-item {
+  flex: 0 0 33.3333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* For the images themselves, let them shrink to fit if needed */
+.carousel-item img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Buttons */
+.carousel-button {
+  background-color: #535353;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-button:hover {
+  background-color: #333;
+}
+

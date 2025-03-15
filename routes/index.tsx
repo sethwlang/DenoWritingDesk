@@ -5,9 +5,9 @@ export default function Home() {
           <h1>Magic happens at The Writing Desk.</h1>
           <p>Pull up a comfy chair and grab your fanciest notebook. It’s time to write. </p>
           <h2>Let’s tell a story that matters. </h2>
-          <img src="/images/LandingPage.webp"
+          <img src="/images/LandingPage.jpg"
                alt="An image of Bailey"
-               className="float-image"
+               class="float-image-home"
           />
           <p>Your story.</p>
           <p>You know the one: the book you’ve been waiting to start until you have more free time, or inspiration
