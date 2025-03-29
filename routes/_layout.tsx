@@ -5,8 +5,9 @@ export default function Layout({Component, url}: PageProps) {
     // do something with state here
     return (
         <main class="layout">
-                <nav>
+            <nav>
 
+                <a href="/">
                     <div className="logo-container">
                         <svg className="logo standard-logo" xmlns="http://www.w3.org/2000/svg"
                              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300"
@@ -33,19 +34,29 @@ export default function Layout({Component, url}: PageProps) {
                             </g>
                         </svg>
                     </div>
+                </a>
+                <input type="checkbox" id="nav-toggle" className="nav-toggle"/>
+                <label htmlFor="nav-toggle" className="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <label htmlFor="nav-toggle" className="overlay"></label>
+                <div className="links-container">
+                    <label htmlFor="nav-toggle" className="close-btn">×</label>
+                    <a href="/" class={currentPath === "/" ? "active-link" : ""}>Home</a>
+                    <a href="/coaching" class={currentPath === "/coaching" ? "active-link" : ""}>Book Coaching</a>
+                    <a class="newsletter-btn" href="https://usethewritingdesk.kit.com/stop-waiting"
+                       target="_blank">Newsletter</a>
+                    <a href="/about" class={currentPath === "/about" ? "active-link" : ""}>About</a>
+                </div>
+            </nav>
 
-                    <div className="links-container">
-                        <a href="/" class={currentPath === "/" ? "active-link" : ""}>Home</a>
-                        <a href="/coaching" class={currentPath === "/coaching" ? "active-link" : ""}>Book Coaching</a>
-                        <a class="newsletter-btn" href="https://usethewritingdesk.kit.com/stop-waiting" target="_blank">Newsletter</a>
-                        <a href="/about" class={currentPath === "/about" ? "active-link" : ""}>About</a>
-                    </div>
-                </nav>
-
-                <Component/>
-                <footer>© Copyright 2025 The Writing Desk, LLC | <a href="/footer/disclaimer">Disclaimer</a> | <a href="/footer/terms">Terms
-                    of
-                    Use</a> | <a href="/footer/privacy">Privacy Policy</a></footer>
+            <Component/>
+            <footer>© Copyright 2025 The Writing Desk, LLC | <a href="/footer/disclaimer">Disclaimer</a> | <a
+                href="/footer/terms">Terms
+                of
+                Use</a> | <a href="/footer/privacy">Privacy Policy</a></footer>
         </main>
 );
 }

@@ -7,16 +7,16 @@
 
 @font-face {
   font-family: didot;
-  src: url(static/fonts/Didot_Regular.ttf);
+  src: url(/fonts/Didot_Regular.ttf);
 }
 @font-face {
   font-family: didot;
-  src: url(static/fonts/Didot_Bold.otf);
+  src: url(/fonts/Didot_Bold.otf);
   font-weight: bold;
 }
 @font-face {
   font-family: didot;
-  src: url(static/fonts/Didot_Italic.otf);
+  src: url(/fonts/Didot_Italic.otf);
   font-style: italic;
 }
 
@@ -142,6 +142,7 @@ main.layout > *:not(nav):not(footer) {
   max-width: 1200px;
   margin: var(--spacing-unit) auto;
   padding: 0 var(--spacing-unit);
+  width: 100%
 }
 
 /* Floating image styling */
@@ -444,4 +445,121 @@ section{
   margin: 20px auto;
   padding: var(--spacing-unit);
 
+}
+/* Mobile CSS*/
+
+/* Hides the checkbox itself */
+.nav-toggle {
+  display: none;
+}
+
+/* The hamburger icon (only visible on mobile) */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  /* If you want the hamburger top-right, you can absolutely position it, etc. */
+}
+
+/* Each 'span' is a bar of the hamburger */
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background: #333; /* or your nav text color */
+  transition: 0.3s;
+}
+
+/* The menu (links-container) in desktop view is just normal */
+.links-container {
+  display: flex;
+  gap: 1rem; /* for spacing */
+  /* no transform in desktop view */
+}
+
+/* For smaller screens,
+   1) show hamburger
+   2) convert links-container into an off-canvas overlay
+*/
+
+.nav-toggle {
+  display: none;
+}
+
+/* 2) Hamburger icon (desktop hides it, mobile shows it, etc. ) */
+.hamburger {
+  display: none; /* will show it via media queries on smaller screens */
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background: #333;
+  transition: 0.3s;
+}
+
+/* 3) Invisible overlay that covers the entire screen
+   when #nav-toggle is checked. Clicking it closes the nav. */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;              /* shorthand for top:0; left:0; right:0; bottom:0 */
+  background: rgba(0, 0, 0, 0.5);
+  cursor: default;
+  z-index: 90;           /* behind the menu, but above the page */
+}
+/* Show overlay when checkbox is checked */
+.nav-toggle:checked ~ .overlay {
+  display: block;
+}
+.links-container {
+  display: flex;      /* normal desktop display if you want that by default */
+  gap: 1rem;
+}
+.close-btn {
+  display: none;
+}
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;   /* Show the hamburger on mobile */
+  }
+
+  /* By default, position the nav off-canvas. */
+  .links-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background: #c8e7ed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;  /* on top of overlay */
+  }
+
+  /* Slide the menu in when checked */
+  .nav-toggle:checked ~ .overlay ~ .links-container {
+    transform: translateX(0);
+  }
+
+  /* The close "X" in the top corner (inside the panel) */
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    display: block;
+  }
+
+  /* Maybe space out the links more in the overlay */
+  .links-container a {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
 }
