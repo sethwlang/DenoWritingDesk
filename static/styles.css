@@ -1,14 +1,31 @@
 /* Example professional-looking CSS for Deno Fresh site */
-
-/* Optional: import a nice web font to make text feel polished */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap");
 
+
+
 /* Root variables: tweak these to match your brand’s look */
+
+@font-face {
+  font-family: didot;
+  src: url(static/fonts/Didot_Regular.ttf);
+}
+@font-face {
+  font-family: didot;
+  src: url(static/fonts/Didot_Bold.otf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: didot;
+  src: url(static/fonts/Didot_Italic.otf);
+  font-style: italic;
+}
+
+
 :root {
   --font-main: 'Inter', sans-serif;
-  --color-text: #333;
+  --color-text: #535353;
   --color-primary: #535353; /* pulled from your SVG fill color */
-  --color-accent: #86efac;  /* background used in 404 page, to tie it all in */
+  --color-accent: #c8e7ed;  /* background used in 404 page, to tie it all in */
   --color-bg: #ffffff;
   --spacing-unit: 1rem;
 }
@@ -38,25 +55,86 @@ main.layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+
+ /*background-color:rgba(238,248,250)*/
+
 }
 
-/* Basic nav styling */
+/* Make the <nav> a flex container with horizontal spacing */
 nav {
+  display: flex;               /* activates flexbox layout */
+  align-items: center;         /* vertically centers items */
+  justify-content: space-between; /* pushes logo left, links right */
+  padding: 26px 6vw;            /* optional: horizontal padding */
+  background-color: #c8e7ed;
+
+}
+.newsletter-btn{
+  border-color: #444444;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  background-color: #535353;
+  padding: 8px 20px;
+  color: #fff !important;
+}
+.btn{
+  border-color: var(--color-primary);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 30px;
+  background-color: #c8e7ed;
+  padding: 8px 20px;
+  text-decoration: none; /* optional: remove underline */
+  color: var(--color-text);
+  font-weight: bold;
+  justify-content: center;
   display: flex;
-  align-items: center;
+  width: 300px;
+  margin: 40px auto;
+
+}
+.btn:hover {
+  color:#6c6c6c;
+}
+/* If you’d like some spacing between your links, you can do: */
+.links-container {
+  display: flex;
+  width: 50%;
   justify-content: space-between;
-  padding: 0 var(--spacing-unit);
-  border-bottom: 1px solid #ddd;
-  background-color: var(--color-bg);
+  align-items: center;
 }
-nav > div {
-  display: inline-block;
-}
-nav a {
-  margin: 0 var(--spacing-unit);
-  text-decoration: none;
+.links-container a {
+  margin-left: 1rem; /* space between links */
+  text-decoration: none; /* optional: remove underline */
   color: var(--color-primary);
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: didot;
+
+}
+.links-container a:hover {
+  color:#6c6c6c;
+  text-decoration-color: #6c6c6c !important;
+}
+
+.active-link {
+  text-decoration: underline !important;
+  text-decoration-color: var(--color-primary) !important;
+  text-decoration-thickness: 3px !important;
+}
+
+
+
+/* (Optional) ensure logo doesn’t shrink when browser is narrow */
+.logo-container {
+
+  flex-shrink: 0;
+}
+.logo{
+  width:180px;
+  height:auto;
 }
 
 /* Main content spacing */
@@ -70,19 +148,20 @@ main.layout > *:not(nav):not(footer) {
 .float-image-home {
   float: right;
   margin: 0 1rem 1rem 0;
-  max-width: 300px;
+  max-width: 60%;
   height: auto;
+  padding: 8px
 }
 
-.float-image-about {
-  float: left;
-  margin: 0 1rem 1rem 0;
-  max-width: 300px;
+.image-about {
+  margin: 20px 20px 20px 0;
+  max-width: 400px;
   height: auto;
+  padding-right: 2rem;
 }
 .image-coaching {
   display: block;
-  max-width: 400px;
+  max-width: 80%;
   height: auto;
   margin: 1.5rem auto;   /* center the image horizontally */
   border-radius: 6px;    /* slight rounded corners */
@@ -94,10 +173,22 @@ h1, h2, h3 {
   margin-bottom: 1rem;
   font-weight: 600;
   color: var(--color-primary);
+  font-family: didot;
+}
+h1{
+  font-size: 3rem;
+}
+.forged{
+  font-size: 3.5rem;
+  line-height: 1.2;
+  max-width: 55%;
+
+
 }
 
 /* Paragraph spacing */
 p {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
@@ -107,17 +198,19 @@ ul {
   padding-left: 1.4rem;
 }
 li {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 /* Footer sits at the bottom thanks to flex in main.layout */
 footer {
   margin-top: auto; /* push footer to bottom */
   border-top: 1px solid #ddd;
-  background-color: var(--color-bg);
   text-align: center;
   padding: var(--spacing-unit);
   font-size: 0.9rem;
+  background-color: #c8e7ed;
 }
 
 footer a {
@@ -128,20 +221,40 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+section{
+  /* Let’s start from the parent's center, then shift left half the viewport */
+  position: relative;
+  left: 50%;
+  right: 50%;
 
+  /* Make the element itself the full width of the viewport */
+  width: 100vw;
+
+  /* Pull back left and right by half the viewport width */
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #c8e7ed;
+}
+.quote{
+
+  /*background-color: var(--color-primary);
+  color: #ffffff;*/
+  margin: 4rem;
+}
 /* A flex container to position description (left) and details (right) side by side */
 .pricing-offer {
   display: flex;                /* Put children side by side */
-  align-items: flex-start;      /* Top-align them */
-  justify-content: space-between;
-  gap: 2rem;                    /* Space between left & right columns */
+  flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1.5rem;
-  margin-bottom: 2rem;
-  background-color: #fdfdfd;    /* Slightly off-white background */
-}
 
+  background-color: #fdfdfd;    /* Slightly off-white background */
+  width: 50%;
+}
+.full{
+  width: 100% !important;
+}
 /* Left column */
 .pricing-description {
   flex: 1;                      /* Let the description grow/shrink as needed */
@@ -152,22 +265,24 @@ footer a:hover {
   margin-bottom: 0.5rem;
 }
 
+
 /* Right column */
 .pricing-details {
   display: flex;
   flex-direction: column;       /* Stack the price above the button */
   align-items: center;        /* center-align text in the details area */
   justify-content: center;      /* Center them vertically in the column */
-  min-width: 150px;            /* Keep some consistent width */
-  width: 30%;
 }
 
 /* Price styling */
 .pricing-details .price {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #444;
+  color: var(color-text);
   margin-bottom: 1rem;
+}
+.pricing-details p{
+  font-size: 1rem;
 }
 
 /* Sign Up button */
@@ -187,33 +302,42 @@ footer a:hover {
 
 /* Tweak heading, paragraph, list styles if desired */
 .pricing-description p {
+  font-size: 1rem;
   margin-bottom: 1rem;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 .pricing-description ul {
+
   margin-left: 1.2rem;
   list-style: disc;
 }
+.pricing-description ul li{
+
+  font-size: 1rem;
+}
+
 /* Container: turn on flex, wrap items, and set some gap. */
 .faq-container {
   display: flex;
-  flex-wrap: wrap;       /* Allows items to wrap into multiple rows. */
+  flex-direction: column;
+       /* Allows items to wrap into multiple rows. */
   gap: 1rem;            /* Spacing between items */
   max-width: 900px;
   margin: 0 auto;
   font-family: sans-serif;
+  padding-bottom: 40px;
 }
 
 /* Force each item to be ~50% wide, minus the gap.
    (calc(50% - 0.5rem) accounts for the 1rem gap, half on each side.)
 */
 .faq-item {
-  flex: 1 1 calc(50% - 0.5rem);
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 1rem;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  background: #fff;
 }
 
 /* If you want EXACT two columns, you can do:
@@ -223,12 +347,6 @@ footer a:hover {
    This ensures each is exactly 50% (no auto sizing).
 */
 
-/* Make sure items go full width on small screens */
-@media (max-width: 600px) {
-  .faq-item {
-    flex: 1 1 100%;
-  }
-}
 
 /* The clickable question row */
 .faq-question {
@@ -255,7 +373,7 @@ footer a:hover {
 
 /* Show answer when open */
 .faq-answer.open {
-  max-height: 200px; /* or large enough for your content */
+  max-height: 300px; /* or large enough for your content */
   opacity: 1;
 }
 /* Outer wrapper: horizontally center everything, set spacing */
@@ -270,7 +388,7 @@ footer a:hover {
 
 /* "Viewport" that hides overflow beyond the visible 3 images */
 .carousel-window {
-  width: 600px; /* total width that will display the 3 images (200px each if you want) */
+  max-width: 600px; /* total width that will display the 3 images (200px each if you want) */
   overflow: hidden;
   position: relative;
 }
@@ -292,8 +410,8 @@ footer a:hover {
 
 /* For the images themselves, let them shrink to fit if needed */
 .carousel-item img {
-  max-width: 90%;
-  height: auto;
+  width: 100%;
+  height: 300px;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
@@ -314,3 +432,16 @@ footer a:hover {
   background-color: #333;
 }
 
+.signup{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto;
+}
+.center-title{
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: var(--spacing-unit);
+
+}

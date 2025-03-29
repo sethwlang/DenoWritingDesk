@@ -7,9 +7,11 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $about from "./routes/about.tsx";
 import * as $coaching from "./routes/coaching.tsx";
+import * as $footer_disclaimer from "./routes/footer/disclaimer.tsx";
+import * as $footer_privacy from "./routes/footer/privacy.tsx";
+import * as $footer_terms from "./routes/footer/terms.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $BookCarousel from "./islands/BookCarousel.tsx";
-import * as $Counter from "./islands/Counter.tsx";
 import * as $Faq from "./islands/Faq.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -20,11 +22,13 @@ const manifest = {
     "./routes/_layout.tsx": $_layout,
     "./routes/about.tsx": $about,
     "./routes/coaching.tsx": $coaching,
+    "./routes/footer/disclaimer.tsx": $footer_disclaimer,
+    "./routes/footer/privacy.tsx": $footer_privacy,
+    "./routes/footer/terms.tsx": $footer_terms,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/BookCarousel.tsx": $BookCarousel,
-    "./islands/Counter.tsx": $Counter,
     "./islands/Faq.tsx": $Faq,
   },
   baseUrl: import.meta.url,

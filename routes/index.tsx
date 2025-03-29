@@ -2,9 +2,10 @@ export default function Home() {
   return (
       <main>
 
-          <h1>Magic happens at The Writing Desk.</h1>
-          <p>Pull up a comfy chair and grab your fanciest notebook. It’s time to write. </p>
-          <h2>Let’s tell a story that matters. </h2>
+          <div><h1>Magic happens at The Writing Desk.</h1>
+              <p>Pull up a comfy chair and grab your fanciest notebook. It’s time to write. </p>
+              <h2>Let’s tell a story that matters. </h2>
+          </div>
           <img src="/images/LandingPage.jpg"
                alt="An image of Bailey"
                class="float-image-home"
@@ -21,12 +22,15 @@ export default function Home() {
           <p>Sitting down at The Writing Desk, of course.</p>
           <p>You deserve a writing practice that meets your needs and supports your best work. A writing practice that
               fuels your creativity and makes writing your book—dare I say it?—fun. </p>
-          <p>At the Writing Desk, we’ll build that practice together. </p>
+          <h2>At the Writing Desk, we’ll build that practice together. </h2>
           <p>Working with a book coach opens the portal to a deeply personalized, sustainable writing practice.
               Together,
               we’ll take your book from draft to done. </p>
-          <a href="/coaching">Learn About Book Coaching</a>
-          <h3> Newsletter Signup Form</h3>
+          <a class="btn" href="/coaching">Learn About Book Coaching</a>
+          <div class="signup">
+          <script async data-uid="12d0a0d491" type="application/javascript"
+                  src="https://usethewritingdesk.ck.page/12d0a0d491/index.js" defer></script>
+          </div>
       </main>
   );
 }
