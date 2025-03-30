@@ -1,23 +1,35 @@
 {
+  "lock": false,
   "tasks": {
-    "dev": "deno run -A --node-modules-dir npm:vite",
-    "build": "deno run -A --node-modules-dir npm:vite build",
-    "preview": "deno run -A --node-modules-dir npm:vite preview",
-    "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
+    "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
+    "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
+    "manifest": "deno task cli manifest $(pwd)",
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "build": "deno run -A dev.ts build",
+    "preview": "deno run -A main.ts",
+    "update": "deno run -A -r https://fresh.deno.dev/update ."
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
+  "exclude": [
+    "**/_fresh/*"
+  ],
+  "imports": {
+    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "preact": "https://esm.sh/preact@10.22.0",
+    "preact/": "https://esm.sh/preact@10.22.0/",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+    "$std/": "https://deno.land/std@0.216.0/"
   },
   "compilerOptions": {
-    "lib": ["ES2020", "DOM", "DOM.Iterable"]
-  },
-  "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@1.0.0",
-    "@vitejs/plugin-vue": "npm:@vitejs/plugin-vue@5.2.1",
-    "sass": "npm:sass@^1.81.0",
-    "sass-embedded": "npm:sass-embedded@^1.81.0",
-    "sass-migrator": "npm:sass-migrator@2.2.1",
-    "tailwindcss": "npm:tailwindcss@3.4.15",
-    "vite": "npm:vite@6.0.1",
-    "vue": "npm:vue@3.5.13",
-    "vue-router": "npm:vue-router@4.5.0",
-    "vue3-carousel": "npm:vue3-carousel@^0.8.1"
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }

@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: main
+    branches: Fresh
   pull_request:
-    branches: main
+    branches: Fresh
 
 jobs:
   deploy:
@@ -23,22 +23,14 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
-      - name: Install step
-        run: "deno install"
-
       - name: Build step
         run: "deno task build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "sethwlang-use-writing-desk"
-          entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "dist"
+          project: "sethwlang-denowriting-56"
+          entrypoint: "main.ts"
+          root: "."
           
           
