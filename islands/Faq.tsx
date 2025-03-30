@@ -68,7 +68,7 @@ const FAQ_DATA: FaqItem[] = [
     {
         question: "I want to work with you, but I can’t afford it. What should I do?",
         answer:
-            "My weekly newsletter, <a href='https://usethewritingdesk.kit.com/profile' target='_blank'>Word to the Wise</a>, is 100% free—and I pack it full of practical writing advice and inspiring interviews with working writers. I also offer occasional low-cost writing challenges and other resources, which you can learn about in Word to the Wise!\n",
+            "My weekly newsletter, <a href='https://usethewritingdesk.kit.com/profile' target='_blank' style='color: #56b4c7'>Word to the Wise</a>, is 100% free—and I pack it full of practical writing advice and inspiring interviews with working writers. I also offer occasional low-cost writing challenges and other resources, which you can learn about in Word to the Wise!\n",
     },
 ];
 
