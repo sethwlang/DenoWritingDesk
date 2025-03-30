@@ -32,18 +32,12 @@ const FAQ_DATA: FaqItem[] = [
     {
         question: "How do I know what option is right for me?",
         answer:
-            "If you have a completed manuscript and you’re eager to get to the next steps, check out the Manuscript Review and Book Proposal services. A Manuscript Review gets you my eagle eye on your draft. A Book Proposal gets you ready to tackle the traditional publishing process. \n" +
-            "\n" +
-            "If you’re starting a new book, feel stuck partway through a draft, or want help and feedback as you write, check out the Get Unstuck Session, Writing Strategy Audit, and 1:1 Coaching. Get Unstuck Sessions and the Writing Strategy Audit are great for breaking through specific story problems and generating project plans; 1:1 Coaching is ideal if you want long-term support. \n" +
-            "\n" +
-            "If you’re a thought leader, creative, or entrepreneur who’s bursting at the seams with an incredible nonfiction book idea and your schedule is bursting at the seams with prior commitments, let’s talk about Ghostwriting. \n",
+            "If you have a completed manuscript and are eager to get to the next steps, check out the Manuscript Review and Book Proposal services. A Manuscript Review puts my eagle eye on your draft. A Book Proposal prepares you to tackle the traditional publishing process. If you’re starting a new book, feel stuck partway through a draft, or want help and feedback as you write, check out the Get Unstuck Session and 1:1 Coaching. Get Unstuck Sessions are great for breaking through specific story problems and generating project plans. 1:1 Coaching is ideal if you want long-term support. If you’re a thought leader, creative, or entrepreneur who’s bursting at the seams with an incredible nonfiction book idea and your schedule is bursting at the seams with prior commitments, let’s talk about Ghostwriting.",
     },
     {
         question: "I know what I want help with—where do we start?",
         answer:
-            "You can sign up for a Get Unstuck Session or a Writing Strategy Audit right from the links above. From there, you’ll get a series of emails that will collect the information I need and provide you with meeting options so we can get together at a time that works for your schedule. \n" +
-            "\n" +
-            "For 1:1 Coaching, Manuscript Review, Book Proposal, and Ghostwriting work, the first step is to schedule a free 30-minute meeting. We’ll discuss your book and your needs in more detail and decide if we’re a good fit before moving forward with a contract and, depending on the service, scheduling our first full meeting. \n",
+            "You can sign up for a Get Unstuck Session right from the link above. From there, you’ll get a series of emails that will collect the information I need and provide you with meeting options so we can get together at a time that works for your schedule. For 1:1 Coaching, Manuscript Review, Book Proposal, and Ghostwriting work, the first step is to schedule a free 30-minute meeting. We’ll discuss your book and needs in more detail and decide if we’re a good fit before moving forward.",
     },
     {
         question: "What are your credentials?",

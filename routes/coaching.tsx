@@ -68,7 +68,7 @@ export default function CoachingPage() {
                                     your corner as you write,
                                     and we’ll be laser-focused on two key components: your writing practice and your
                                     command of the craft.
-                                    I’ll give you extensive feedback so you sharpen your writing and make real progress.
+                                    I’ll give you extensive feedback so you make real progress and sharpen your writing.
 
                                 </p>
                                 <p>
