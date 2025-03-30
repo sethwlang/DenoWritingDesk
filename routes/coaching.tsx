@@ -6,7 +6,7 @@ export default function CoachingPage() {
         <main>
             <h1>Book Coaching</h1>
             <h2 style="font-size:2rem">Your writing practice is as unique as your voice. A book coach can help you enhance both.</h2>
-            <img src="/images/AboutMe.jpg"
+            <img src="/images/AboutMe_sm.jpg"
                  alt="An image of Bailey" class="image-coaching"/>
             <p>Whether you’re looking to geek out about (or inject some magic into) your writing practice, resolve a
                 tricky plot problem in

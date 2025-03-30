@@ -6,7 +6,7 @@ export default function Home() {
               <p>Pull up a comfy chair and grab your fanciest notebook. It’s time to write. </p>
               <h2>Let’s tell a story that matters. </h2>
           </div>
-          <img src="/images/LandingPage.jpg"
+          <img src="/images/LandingPage_sm.jpg"
                alt="An image of Bailey"
                class="float-image-home"
           />

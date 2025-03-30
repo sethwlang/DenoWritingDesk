@@ -2,7 +2,7 @@ export default function AboutPage() {
     return (
         <main>
             <div class="about-intro">
-            <img src="/images/baileybywall.jpg"
+            <img src="/images/baileybywall_sm.jpg"
                alt="An image of Bailey"
                class="image-about"
           />
