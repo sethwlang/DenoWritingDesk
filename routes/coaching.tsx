@@ -68,7 +68,7 @@ export default function CoachingPage() {
                                     your corner as you write,
                                     and we’ll be laser-focused on two key components: your writing practice and your
                                     command of the craft.
-                                    I’ll give you extensive feedback so you make real progress and sharpen your writing.
+                                    I’ll give you extensive feedback so you sharpen your writing and make real progress.
 
                                 </p>
                                 <p>
@@ -94,7 +94,7 @@ export default function CoachingPage() {
                                 <p>(1:1 Coaching has a minimum three-month commitment, and we can work together until
                                     your book is done.)
                                 </p>
-                                <a href="https://calendly.com/the-writing-desk/free-consultation"
+                                <a href="https://calendly.com/the-writing-desk/free-consultation" target="_blank"
                                    className="sign-up-btn">Contact Bailey</a>
                             </div>
                         </div>
@@ -152,7 +152,7 @@ export default function CoachingPage() {
                                 <p>(Up to 100K words; completed manuscripts only. Allow 4 weeks to receive feedback.)
 
                                 </p>
-                                <a href="https://calendly.com/the-writing-desk/free-consultation"
+                                <a href="https://calendly.com/the-writing-desk/free-consultation" target="_blank"
                                    className="sign-up-btn">Contact
                                     Bailey</a>
                             </div>
@@ -189,7 +189,7 @@ export default function CoachingPage() {
                                 <div className="price">$4,500</div>
                                 <p>(Allow 8-10 weeks for proposal development.)
                                 </p>
-                                <a href="https://calendly.com/the-writing-desk/free-consultation"
+                                <a href="https://calendly.com/the-writing-desk/free-consultation" target="_blank"
                                    className="sign-up-btn">Contact
                                     Bailey</a>
                             </div>
@@ -214,8 +214,7 @@ export default function CoachingPage() {
                                     lives for the better. You have the expertise; you’ve done the research; your idea
                                     can
                                     walk
-                                    the walk. W
-                                    hat you don’t have is the time to write an entire book.
+                                    the walk. What you don’t have is the time to write an entire book.
                                 </p>
                                 <p>
                                     That’s where I come in. As a ghostwriter, I’ll step as fully into your shoes as
@@ -243,7 +242,7 @@ export default function CoachingPage() {
                                 <p>(Ghostwriting a book typically takes 10-12 months.)
 
                                 </p>
-                                <a href="https://calendly.com/the-writing-desk/free-consultation"
+                                <a href="https://calendly.com/the-writing-desk/free-consultation" target="_blank"
                                    className="sign-up-btn">Contact
                                     Bailey</a>
                             </div>

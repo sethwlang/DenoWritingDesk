@@ -68,7 +68,7 @@ const FAQ_DATA: FaqItem[] = [
     {
         question: "I want to work with you, but I can’t afford it. What should I do?",
         answer:
-            "My weekly newsletter, Word to the Wise, is 100% free—and I pack it full of practical writing advice and inspiring interviews with working writers. I also offer occasional low-cost writing challenges and other resources, which you can learn about in Word to the Wise!\n",
+            "My weekly newsletter, <a href='https://usethewritingdesk.kit.com/profile' target='_blank'>Word to the Wise</a>, is 100% free—and I pack it full of practical writing advice and inspiring interviews with working writers. I also offer occasional low-cost writing challenges and other resources, which you can learn about in Word to the Wise!\n",
     },
 ];
 
@@ -89,18 +89,17 @@ export default function Faq() {
                     <div
                         class={`faq-item ${isOpen ? "active" : ""}`}
                         key={item.question}
+                        onClick={() => handleToggle(index)}
                     >
                         <div
                             class="faq-question"
-                            onClick={() => handleToggle(index)}
+
                         >
                             <span>{item.question}</span>
                             {/* Use a rotation transition for the arrow */}
                             <span class="faq-arrow">{isOpen ? "▲" : "▼"}</span>
                         </div>
-                        <div class={`faq-answer ${isOpen ? "open" : ""}`}>
-                            {item.answer}
-                        </div>
+                        <div class={`faq-answer ${isOpen ? "open" : ""}`}  dangerouslySetInnerHTML={{ __html: item.answer }}/>
                     </div>
                 );
             })}

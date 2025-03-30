@@ -349,6 +349,7 @@ section{
   box-sizing: border-box;
   transition: all 0.3s ease;
   background: #fff;
+  cursor: pointer;
 }
 
 /* If you want EXACT two columns, you can do:
@@ -364,7 +365,6 @@ section{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
   font-weight: 600;
 }
 
@@ -378,13 +378,13 @@ section{
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+
   margin-top: 0.5rem;
 }
 
 /* Show answer when open */
 .faq-answer.open {
-  max-height: 300px; /* or large enough for your content */
+  max-height: 100%; /* or large enough for your content */
   opacity: 1;
 }
 /* Outer wrapper: horizontally center everything, set spacing */
