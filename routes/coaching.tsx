@@ -20,7 +20,7 @@ export default function CoachingPage() {
             <p>Explore the options below to see how we can work together.</p>
             <section>
                 <div style="max-width:1200px;margin: 1rem auto; padding: 4rem 1rem;">
-                    <div style="display: flex;gap:2rem;">
+                    <div class="pricing-columns">
                         <div className="pricing-offer">
 
                             <div className="pricing-description">
@@ -107,7 +107,7 @@ export default function CoachingPage() {
                         </p></i>
                         <b><p>—Rey H., Science Fiction Author.</p></b>
                     </div>
-                    <div style="display: flex;gap:2rem">
+                    <div class="pricing-columns">
                         <div className="pricing-offer">
 
                             <div className="pricing-description">
@@ -201,7 +201,7 @@ export default function CoachingPage() {
                         </p></i>
                         <b><p>—Milena Velez, Children’s and YA Author.</p></b>
                     </div>
-                    <div>
+                    <div class="pricing-columns" >
                         <div className="pricing-offer full">
 
                             <div className="pricing-description">

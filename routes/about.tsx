@@ -1,7 +1,7 @@
 export default function AboutPage() {
     return (
         <main>
-            <div style="display:flex;">
+            <div class="about-intro">
             <img src="/images/baileybywall.jpg"
                alt="An image of Bailey"
                class="image-about"
